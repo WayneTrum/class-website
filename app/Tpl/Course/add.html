@@ -1,0 +1,25 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>AddCourse</title>
+</head>
+<body>
+  <form method="POST" action="__URL__/addcourse">
+    课程名称：<input type="text" name="course_name" /><br/>
+    课程学分：<input type="text" name="course_score" /><br/>
+    所在学院：
+    <select name="school_id">
+      <volist name="schoollist" id="school">
+        <option value="{$school.school_id}">{$school.school_name}</option>
+      </volist>
+    </select><br/>
+    授课教师：
+    <select name="teacher_id">
+      <volist name="teacherlist" id="teacher">
+        <option value="{$teacher.teacher_id}">{$teacher.teacher_name}</option>
+      </volist>
+    </select><br/>
+    <input type="submit" value="提交"/>
+  </form>
+</body>
+</html>

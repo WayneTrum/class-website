@@ -1,0 +1,32 @@
+<include file="Public:header" />
+<include file="Public:leader" />
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <img src="__PUBLIC__/image/courseindex.png" />
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-2">
+      <include file="Public:slidebar" />
+    </div>
+    <div class="col-lg-6">
+      <div>
+        <h4><strong>通知列表</strong></h4><br/>
+        <volist name="messagelist" id="message">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h5><strong>{$message.message_title}</strong></h5>
+            </div>
+            <div class="panel-body">
+              <p>{$message.message_content}</p>
+            </div>
+          </div>
+        </volist>
+      </div>
+    </div>
+  </div>
+</div>
+<include file="Public:footer" />

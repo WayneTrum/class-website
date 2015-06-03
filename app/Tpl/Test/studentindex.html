@@ -1,0 +1,62 @@
+<include file="Public:header" />
+<include file="Public:leader" />
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <img src="__PUBLIC__/image/courseindex.png" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-8"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-2 text-center">
+      <include file="Public:slidebar" />
+    </div>
+    <div class="col-lg-6">
+      <div class="start">
+        <p>点击下方按钮开始测试</p>
+        <button type="button" id="start" class="btn btn-pramary">start</button>
+        <div id="testnotice">
+          <span><strong>测试时间为15分钟，可提前提交，超过时间未提交，自动提交，为选择答案的题按放弃处理！</strong></span>
+        </div>
+      </div><br/>
+      <div class="panel panel-info" id="test">
+        <div class="panel-heading">
+          <h5><strong>{$zhang.zhang_name}</strong></h5>
+        </div>
+        <div class="panel-body" id="testform">
+          <form class="form-horizontal" method="POST" action="__APP__/Test/testresult">
+          <volist name="testlist" id="test">
+            <div class="form-group">
+              <h6><strong>{$test.test_title}</strong></h6>
+            </div>
+            <div class="testoption">
+              <input type="radio" name="{$test.test_id}" value="a" />A.{$test.test_option_a}<br/>
+              <input type="radio" name="{$test.test_id}" value="b" />B.{$test.test_option_b}<br/>
+              <input type="radio" name="{$test.test_id}" value="c" />C.{$test.test_option_c}<br/>
+              <input type="radio" name="{$test.test_id}" value="d" />D.{$test.test_option_d}<br/>
+            </div>
+          </volist>
+          <div class="form-group">
+            <input type="hidden" name="zhang_id" value="{$zhang.zhang_id}">
+          </div>
+          <div class="form-group">
+            <div class="col-sm-2">
+              <input type="submit" id="submit" class="form-control" value="提交">
+            </div>
+          </div>
+          </form>
+          <br/>
+          <div>
+            <h5>剩余时间：<strong><span id="delayminutes">15</span>:<span id="zero"></span><span id="delayseconds">0</span></strong></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<include file="Public:footer" />

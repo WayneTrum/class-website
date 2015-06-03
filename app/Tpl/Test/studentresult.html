@@ -1,0 +1,31 @@
+<include file="Public:header" />
+<include file="Public:leader" />
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <img src="__PUBLIC__/image/courseindex.png" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-8"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-2 text-center">
+      <include file="Public:slidebar" />
+    </div>
+    <div class="col-lg-6">
+      <h4><strong>{$zhang.zhang_name}</strong></h4>
+      <span>得分：<strong>{$student_test.test_score}</strong></span>
+      <volist name="testlist" id="test">
+        <div class="">
+          <span>{$test.test_title}</span><br/>
+          <span>正确答案：{$test.test_option_right}</span><br/>
+        </div>
+      </volist>
+    </div>
+  </div>
+</div>
+<include file="Public:footer" />

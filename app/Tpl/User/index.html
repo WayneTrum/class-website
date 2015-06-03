@@ -1,0 +1,26 @@
+<include file="Public:header" />
+<include file="Public:leader" />
+<div class="container text-center">
+  <span><p><strong>我的课程列表</strong></p></span>
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>课程ID</th>
+        <th>课程名称</th>
+        <th>课程学分</th>
+        <th><a href="__APP__/Course/index">添加课程</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <volist name="courselist" id="course">
+        <tr>
+          <td>{$course.course_id}</td>
+          <td>{$course.course_name}</td>
+          <td>{$course.course_score}</td>
+          <td><a href="__APP__/Courseinfo/index/id/{$course.course_id}">进入课程</a></td>
+        </tr>
+      </volist>
+    </tbody>
+  </table>
+</div>
+<include file="Public:footer" />

@@ -1,0 +1,105 @@
+<include file="Public:header" />
+<include file="Public:leader" />
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-2">
+      <br/><span id="DoUser"><a href="#">学生用户</a></span><br/>
+      <br/><span id="DoTeacher"><a href="#">教师用户</a></span><br/>
+      <br/><span id="DoCourse"><a href="#">课程设置</a></span><br/>
+      <br/><span id="DoSchool"><a href="#">学院设置</a></span><br/>
+    </div>
+    <div class="col-lg-6">
+      <div id="ManagerDoStudent">
+        <p><strong>学生用户列表</strong></p>
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>学生ID</th>
+              <th>学生姓名</th>
+              <th><a href="__APP__/Manager/addstudent">添加</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <volist name="userlist" id="student">
+              <tr>
+                <td>{$student.user_id}</td>
+                <td>{$student.username}</td>
+                <td><a href="__URL__/deleteuser/id/{$student.user_id}">删除</a></td>
+              </tr>
+            </volist>
+          </tbody>
+        </table>
+      </div>
+      <div id="ManagerDoTeacher">
+        <p><strong>教师用户列表</strong></p>
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>教师ID</th>
+              <th>教师姓名</th>
+              <td><a href="__APP__/{$usertype}/addteacher">添加</a></td>
+            </tr>
+          </thead>
+          <tbody>
+            <volist name="teacherlist" id="teacher">
+              <tr>
+                <td>{$teacher.teacher_id}</td>
+                <td>{$teacher.teacher_name}</td>
+                <td><a href="__URL__/deleteteacher/id/{$teacher.teacher_id}">删除</a></td>
+              </tr>
+            </volist>
+          </tbody>
+        </table>
+      </div>
+      <div id="ManagerDoCourse">
+        <p><strong>课程列表</strong></p>
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>课程ID</th>
+              <th>课程名称</th>
+              <th>课程学分</th>
+              <th>课程教师</th>
+              <th><a href="__APP__/{$usertype}/addcourse">添加</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <volist name="courselist" id="course">
+              <tr>
+                <td>{$course.course_id}</td>
+                <td>{$course.course_name}</td>
+                <td>{$course.course_score}</td>
+                <td>{$course.course_teacher_name}</td>
+                <td><a href="__URL__/deletecourse/id/{$course.course_id}">删除</a></td>
+              </tr>
+            </volist>
+          </tbody>
+        </table>
+      </div>
+      <div id="ManagerDoSchool">
+        <p><strong>学院列表</strong></p>
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>学院ID</th>
+              <th>学院名称</th>
+              <th><a href="__APP__/{$usertype}/addschool">添加</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <volist name="schoollist" id="school">
+              <tr>
+                <td>{$school.school_id}</td>
+                <td>{$school.school_name}</td>
+                <td><a href="__URL__/deleteschool/id/{$school.school_id}">删除</a></td>
+              </tr>
+            </volist>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div calss="col-lg-2"></div>
+  </div>
+</div>
+<include file="Public:footer" />

@@ -1,0 +1,55 @@
+<include file="Public:header" />
+<include file="Public:leader" />
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <img src="__PUBLIC__/image/courseindex.png" />
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-2">
+      <strong><p>开课院系</p></strong>
+      <br/>
+      <div>
+        <span>
+          <a href="__APP__/Course/index">全部课程</a>
+          <br/>
+        </span>
+        <br/>
+        <volist name="schoollist" id="school">
+          <span>
+            <a href="__APP__/Course/forschool/id/{$school.school_id}">{$school.school_name}</a>
+            <br/>
+          </span>
+          <br/>
+        </volist>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <strong><p>{$school_name}</p></strong>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>课程编号</th>
+            <th>课程名称</th>
+            <th>课程学分</th>
+            <th>授课教师</th>
+          </tr>
+        </thead>
+        <tbody>
+          <volist name="list" id="course">
+            <tr>
+              <td>{$course.course_id}</td>
+              <td><a href="__APP__/Coursestudent/index">{$course.course_name}</a></td>
+              <td>{$course.course_score}</td>
+              <td>{$course.course_teacher_name}</td>
+            </tr>
+          </volist>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<include file="Public:footer"

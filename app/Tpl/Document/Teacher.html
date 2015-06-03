@@ -1,0 +1,58 @@
+<include file="Public:header" />
+<include file="Public:leader" />
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <img src="__PUBLIC__/image/courseindex.png" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-8">
+      <p><strong>当前状态：<span class="glyphicon glyphicon-chevron-right">{$usertype}</span><span class="glyphicon glyphicon-chevron-right"><a href="#">{$username}</a></span><span class="glyphicon glyphicon-chevron-right"><a href="#">{$course.course_name}</a></span></strong></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-2 text-center">
+      <include file="Public:slidebar" />
+    </div>
+    <div class="col-lg-6">
+      <div id="DoDocument">
+        <span id="zhangaddlink"><a href="#"><strong>添加章节</strong></a></span>
+        <div id="zhangaddform">
+          <form class="form-horizontal" method="POST" action="__APP__/Zhang/addDoc" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">章节课程文档</label>
+              <div class="col-sm-8">
+                <input type="file" name="zhang_doc_name" class="form-control" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">章节名称</label>
+              <div class="col-sm-8">
+                <input  name="zhang_name" class="form-control" id="inputEmail3" placeholder="章节名称">
+                <input type="hidden" name="course_id" value="{$course.course_id}">
+              </div>
+              <div class="col-sm-2">
+                <button type="submit" class="btn btn-default">提交</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <volist name="zhanglist" id="zhang">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h5><strong>{$zhang.zhang_name}</strong></h5>
+            </div>
+            <div class="panel-body">
+              <p><a href="__PUBLIC__/Uploads/document/{$zhang.file}">{$zhang.zhang_name}</a></p>
+            </div>
+          </div>
+        </volist>
+      </div>
+    </div>
+  </div>
+</div>
+<include file="Public:footer" />

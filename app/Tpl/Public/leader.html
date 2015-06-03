@@ -1,0 +1,28 @@
+<nav class="nav nav-pills">
+  <div calss="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="__PUBLIC__/image/logo.jpg">
+      </a>
+    </div>
+  </div>
+  <ul class="nav navbar-nav">
+    <li><a href="__APP__/Index/index">首页</a></li>
+    <li><a href="__APP__/Course/index">课程设置</a></li>
+    <li><a href="__APP__/Course/outSourse">课外资源</a></li>
+    <li><a href="">教务管理</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right" id="userdo">
+    <li id="user"><a href="__APP__/{$usertype}/index">{$username}</a></li>
+    <li id="login"><a href="__APP__/User/login">登录</a></li>
+    <li id="register"><a href="__APP__/User/register">注册</a></li>
+    <li id="loginout"><a href="__APP__/User/loginout">注销</a></li>
+  </ul>
+  <form class="navbar-form navbar-right" role="search">
+    <div class="form-group">
+      <input type="text" class="form-control" placehoder="Search" />
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+  
+</nav>

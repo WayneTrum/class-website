@@ -1,0 +1,38 @@
+<include file="Public:header" />
+<include file="Public:leader" />
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <img src="__PUBLIC__/image/courseindex.png" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-8"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-2 text-center">
+      <include file="Public:slidebar" />
+    </div>
+    <div class="col-lg-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h5><strong>{$zhang.zhang_name}</strong></h5>
+            </div>
+            <div class="panel-body">
+              <volist name="vediolist" id="vedio">
+              <h6><strong>{$vedio.vedio_title}</strong></h6>
+              <video height=100% width=70% controls="controls">
+                <source src="__PUBLIC__/Uploads/vedio/{$vedio.vedio_name}" type="video/mp4" />
+              </video>
+            </volist>
+            </div>
+          </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<include file="Public:footer" />

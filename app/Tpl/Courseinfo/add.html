@@ -1,0 +1,32 @@
+<include file="Public:header" />
+<include file="Public:leader" />
+<div class="container">
+   <h3 class="text-center"><strong>{$courselist.course_name}</strong></h3>
+   <form class="form-horizontal" role="form" method="POST" action="__APP__/Courseinfo/addcourseinfo">
+   <div class="form-group">
+      <label for="firstname" class="col-sm-2 control-label">课程概要介绍</label>
+      <div class="col-sm-10">
+         <textarea class="form-control" name="courseinfo_title" rows="5" placeholder="请输入课程概要介绍"></textarea>
+      </div>
+   </div>
+   <div class="form-group">
+      <label for="lastname" class="col-sm-2 control-label">课程内容介绍</label>
+      <div class="col-sm-10">
+         <textarea class="form-control" name="courseinfo_content" rows="15" placeholder="请输入课程内容介绍"></textarea>
+      </div>
+   </div>
+   <div class="form-group">
+      <label for="lastname" class="col-sm-2 control-label">课程参考书目</label>
+      <div class="col-sm-10">
+         <textarea class="form-control" name="courseinfo_reference" rows="15" placeholder="请输入课程参考书目"></textarea>
+            <input type="hidden" name="course_id" value="{$courselist.course_id}">
+      </div>
+   </div>
+   <div class="form-group text-center">
+      <div class="col-sm-offset-2 col-sm-10">
+         <button type="submit" class="btn btn-default">提交</button>
+      </div>
+   </div>
+</form>
+</div>
+<include file="Public:footer" />

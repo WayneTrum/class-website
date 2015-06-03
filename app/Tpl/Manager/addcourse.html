@@ -1,0 +1,46 @@
+<include file="Public:header" />
+<include file="Public:leader" />
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <p><strong><span>添加课程</span></strong></p>
+      <form class="form-horizontal" method="POST" action="__APP__/Course/addcourse">
+        <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">课程名称</label>
+          <div class="col-sm-10">
+            <input  name="course_name" class="form-control"  placeholder="课程名称">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">课程学分</label>
+          <div class="col-sm-10">
+            <input  name="course_score" class="form-control"  placeholder="课程学分">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">所在学院</label>
+          <select name="school_id">
+            <volist name="schoollist" id="school">
+              <option value="{$school.school_id}">{$school.school_name}</option>
+            </volist>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">授课教师</label>
+          <select name="teacher_id">
+            <volist name="teacherlist" id="teacher">
+              <option value="{$teacher.teacher_id}"><strong>{$teacher.teacher_id}</strong>{$teacher.teacher_name}</option>
+            </volist>
+          </select>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default"><strong>注册</strong></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<include file="Public:footer" />
